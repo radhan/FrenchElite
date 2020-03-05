@@ -1,56 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { Router } from '@angular/router';
+import { Router } from "@angular/router";
+import { AuthenticationService } from "../shared/authentication-service";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage {
-
-  loginData = {
-    email: '',
-    password: ''
-  };
+export class LoginPage implements OnInit {
 
   constructor(
-    public toastController: ToastController,
-    public afAuth: AngularFireAuth,
-    private router: Router
-  ) {
-  }
+    public authService: AuthenticationService,
+    public router: Router
+  ) {}
 
-  login() {
-    this.afAuth.auth.signInWithEmailAndPassword(this.loginData.email, this.loginData.password)
-    .then(
-      () => this.router.navigate(['tabs/tab1'])
-    )
-    .catch(err => {
-      console.log('Erreur: ' + err);
-      this.errorMail();
-    });
-  }
+  ngOnInit() {}
 
-  async errorMail() {
-    const toast = await this.toastController.create({
-      message: 'Email ou mot de passe incorrect',
-      duration: 2000,
-      position: 'top'
-    });
-    toast.present();
+  logIn(email, password) {
+    this.authService.SignIn(email.value, password.value)
+      .then((res) => {
+        if(this.authService.isEmailVerified) {
+          this.router.navigate(['tabs/tab1']);          
+        } else {
+          window.alert('Email is not verified')
+          return false;
+        }
+      }).catch((error) => {
+        window.alert(error.message)
+      })
   }
-
-  signUp() {
-    this.afAuth.auth.createUserWithEmailAndPassword(this.loginData.email, this.loginData.password)
-    .then(auth => {
-      console.log('utilisateur connecté');
-    })
-    .catch(err => {
-      console.log('Erreur: ' + err);
-      this.errorMail();
-    });
-  }
-
 }

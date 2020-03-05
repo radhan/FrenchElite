@@ -13,17 +13,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-
-export const firebaseConfig = {
-  apiKey: "AIzaSyCSHqINI0QTCLPGzOQoOXL2qN7cRQWUAek",
-  authDomain: "frenchelite.firebaseapp.com",
-  databaseURL: "https://frenchelite.firebaseio.com",
-  projectId: "frenchelite",
-  storageBucket: "frenchelite.appspot.com",
-  messagingSenderId: "300578988959",
-  appId: "1:300578988959:web:c70e4df604fa3997ab93aa",
-  measurementId: "G-XLELZ80Q0F"
-};
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,15 +23,17 @@ export const firebaseConfig = {
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AngularFirestoreModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    AngularFirestoreModule
   ],
   bootstrap: [AppComponent]
 })

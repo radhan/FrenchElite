@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AuthenticationService } from "../shared/authentication-service";
 
 @Component({
   selector: 'app-tab1',
@@ -8,26 +8,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class Tab1Page {
 
-  userId: string;
-  mail: string;
-  method: any;
-  logged: boolean;
-
   constructor(
-    public afAuth: AngularFireAuth
-  ) {
-    this.afAuth.authState.subscribe(auth => {
-      if (!auth) {
-        console.log('non connecté');
-      }
-      else {
-        console.log('connecté: ' + auth.uid);
-        this.logged = true;
-        this.userId = auth.uid;
-        this.mail   = auth.email;
-        this.method = auth.providerData[0].providerId;
-      }
-    });
-  }
+    public authService: AuthenticationService
+  ) { }
 
 }
