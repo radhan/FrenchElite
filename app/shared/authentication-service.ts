@@ -80,7 +80,7 @@ export class AuthenticationService {
     return this.ngFireAuth.auth.signInWithPopup(provider)
     .then((result) => {
        this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['tabs/tab1']);
         })
       this.SetUserData(result.user);
     }).catch((error) => {
@@ -92,11 +92,11 @@ export class AuthenticationService {
   SetUserData(user) {
     const userRef: AngularFirestoreDocument<any> = this.afStore.doc(`users/${user.uid}`);
     const userData: User = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+      uid:            user.uid,
+      email:          user.email,
+      displayName:    user.displayName,
+      photoURL:       user.photoURL,
+      emailVerified:  user.emailVerified
     }
     return userRef.set(userData, {
       merge: true
@@ -107,7 +107,7 @@ export class AuthenticationService {
   SignOut() {
     return this.ngFireAuth.auth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['login']);
+      this.router.navigate(['home']);
     })
   }
 

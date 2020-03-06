@@ -1,6 +1,6 @@
 <ion-content [fullscreen]="true">
   <div class="header">
-    <h2>{{ mail }}</h2>
+    <h2>{{ authService.userData.displayName }}</h2>
 
     <div class="space-between">
       <div class="followings">
@@ -18,7 +18,7 @@
     <div class="border-blue">
       <div class="border-white">
         <div class="img-box">
-          <img src="https://www.biography.com/.image/t_share/MTY2MzU3Nzk2OTM2MjMwNTkx/elon_musk_royal_society.jpg">
+          <img src="{{ authService.userData.photoURL }}">
         </div>
       </div>
     </div>
@@ -27,10 +27,10 @@
   <ion-card>
     <ion-item lines="none">
       <ion-avatar slot="start">
-        <img src="https://www.biography.com/.image/t_share/MTY2MzU3Nzk2OTM2MjMwNTkx/elon_musk_royal_society.jpg" />
+        <img src="{{ authService.userData.photoURL }}" />
       </ion-avatar>
       <ion-label>
-        <h2><b>Elon Musk</b></h2>
+        <h2><b>{{ authService.userData.displayName }}</b></h2>
         <p>Il y a 14 heures</p>
       </ion-label>
     </ion-item>
