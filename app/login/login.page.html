@@ -3,11 +3,24 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Sign in User</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-row>
+    <ion-col class="ion-align-self-center" size="6">
+      <ion-button class="facebook" color="facebook"expand="full" (click)="fbLogin()">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col class="ion-align-self-center" size="6">
+      <ion-button class="google" color="google" expand="full" (click)="authService.GoogleAuth()">
+        <ion-icon name="logo-google"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  
+  <span class="divider line one-line">ou</span>
   <form>    
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
@@ -21,20 +34,9 @@
 
     <ion-row>
       <ion-col> 
-      <ion-button type="submit" (click)="logIn(email, password)" expand="block">Login</ion-button>
-      </ion-col>
-    </ion-row>
-
-    <span class="divider line one-line">or</span>
-
-    <ion-row>
-      <ion-col> 
-        <ion-button 
-         type="submit" 
-         color="danger"
-         (click)="authService.GoogleAuth()" 
-         expand="block">
-           Login with Google
+        <ion-button type="submit" (click)="logIn(email, password)" expand="block">
+          <ion-icon name="mail-outline"></ion-icon>
+          &nbsp; Login
         </ion-button>
       </ion-col>
     </ion-row>

@@ -18,12 +18,32 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'nutrition',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../nutrition/nutrition.module').then(m => m.NutritionPageModule)
+          }
+        ]
+      },
+      {
         path: 'tab2',
         children: [
           {
             path: '',
             loadChildren: () =>
               import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+          }
+        ]
+      },
+      {
+        path: 'blog',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../blog/blog.module').then(m => m.BlogPageModule)
           }
         ]
       },

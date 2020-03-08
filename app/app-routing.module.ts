@@ -9,7 +9,8 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },  {
+  },
+  {
     path: 'registration',
     loadChildren: () => import('./registration/registration.module').then( m => m.RegistrationPageModule)
   },
@@ -24,6 +25,22 @@ const routes: Routes = [
   {
     path: 'forgot-password',
     loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  },
+  {
+    path: 'nutrition',
+    loadChildren: () => import('./nutrition/nutrition.module').then( m => m.NutritionPageModule)
+  },
+  {
+    path: 'blog',
+    loadChildren: () => import('./blog/blog.module').then( m => m.BlogPageModule)
+  },
+  {
+    path: 'blog/:id',
+    loadChildren: () => import('./post/post.module').then( m => m.PostPageModule)
+  },
+  {
+    path: 'not-facebook',
+    loadChildren: () => import('./not-facebook/not-facebook.module').then( m => m.NotFacebookPageModule)
   }
 
 ];

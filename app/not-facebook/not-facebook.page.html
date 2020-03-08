@@ -4,7 +4,7 @@
       <ion-col class="ion-align-self-center">
         <div class="ion-text-center">
           <h1 class="app-logo">logo</h1>
-        <p class="app-tagline">Your tag line</p>
+        <p class="app-tagline">Faites le grand saut !</p>
         </div>
       </ion-col>
     </ion-row>
@@ -12,12 +12,11 @@
     <ion-row class="bottom-content">
       <ion-col class="ion-align-self-center" size="12">
         <div class="ion-text-center">
-          <ion-button class="facebook" color="facebook" (click)="fbLogin()">
-            <ion-icon name="logo-facebook"></ion-icon>
-            &nbsp; Connexion avec Facebook
+          <ion-button class="orange" color="orange" expand="full" [routerLink]="['/registration']">
+            Créer un compte
           </ion-button>
           <span class="divider line one-line">ou</span>
-          <ion-label color="light" [routerLink]="['/not-facebook']">Vous n'avez pas Facebook ?</ion-label>
+          <ion-label color="light" [routerLink]="['/login']">Vous avez déjà un compte ?</ion-label>
         </div>
       </ion-col>
       <ion-col class="ion-align-self-center">
