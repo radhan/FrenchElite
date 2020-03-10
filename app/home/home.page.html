@@ -1,6 +1,6 @@
 <ion-content class="auth-form background">
   <ion-grid class="layer">
-    <ion-row classs="top-content">
+    <ion-row>
       <ion-col class="ion-align-self-center">
         <div class="ion-text-center">
           <h1 class="app-logo">logo</h1>
@@ -9,10 +9,10 @@
       </ion-col>
     </ion-row>
 
-    <ion-row class="bottom-content">
+    <ion-row>
       <ion-col class="ion-align-self-center" size="12">
         <div class="ion-text-center">
-          <ion-button class="facebook" color="facebook" (click)="fbLogin()">
+          <ion-button class="facebook" color="facebook" (click)="authService.FacebookAuth()">
             <ion-icon name="logo-facebook"></ion-icon>
             &nbsp; Connexion avec Facebook
           </ion-button>

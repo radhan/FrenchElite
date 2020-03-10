@@ -8,17 +8,28 @@
 
 <ion-content>
   <ion-row>
-    <ion-col class="ion-align-self-center" size="6">
-      <ion-button class="facebook" color="facebook"expand="full" (click)="fbLogin()">
-        <ion-icon name="logo-facebook"></ion-icon>
-      </ion-button>
-    </ion-col>
-    <ion-col class="ion-align-self-center" size="6">
-      <ion-button class="google" color="google" expand="full" (click)="authService.GoogleAuth()">
-        <ion-icon name="logo-google"></ion-icon>
-      </ion-button>
+    <ion-col class="ion-align-self-center" size="12">
+      <div class="ion-text-center">
+        <h3>Bon retour</h3>
+        <span>Connectez-vous avec vos réseaux sociaux ou une adresse email pour commencer.</span>
+      </div>
     </ion-col>
   </ion-row>
+
+  <ion-grid class="button-group">
+    <ion-row>
+      <ion-col>
+        <ion-button class="facebook" expand="block" color="facebook" (click)="authService.FacebookAuth()">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="google" expand="block" color="primary" (click)="authService.GoogleAuth()">
+          <ion-icon name="logo-google"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   
   <span class="divider line one-line">ou</span>
   <form>    
@@ -28,17 +39,24 @@
     </ion-item> 
 
     <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
+      <ion-label position="floating">Mot de passe</ion-label>
       <ion-input type="password" #password required></ion-input>
     </ion-item>
 
     <ion-row>
-      <ion-col> 
-        <ion-button type="submit" (click)="logIn(email, password)" expand="block">
+      <ion-col>
+        <ion-button type="submit" color="red" (click)="logIn(email, password)" expand="full">
           <ion-icon name="mail-outline"></ion-icon>
-          &nbsp; Login
+          &nbsp; Connexion
         </ion-button>
       </ion-col>
     </ion-row>
   </form>
+  <ion-row>
+    <ion-col class="ion-align-self-center" size="12">
+      <div class="ion-text-center">
+        <ion-label color="dark" [routerLink]="['/forgot-password']">Mot de passe oublié ?</ion-label>
+      </div>
+    </ion-col>
+  </ion-row>
 </ion-content>

@@ -3,11 +3,36 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Register User</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-row>
+    <ion-col class="ion-align-self-center" size="12">
+      <div class="ion-text-center">
+        <h3>Créer un compte</h3>
+        <span>Inscrivez-vous à l'aide de vos réseaux sociaux ou d'une adresse email.</span>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-grid class="button-group">
+    <ion-row>
+      <ion-col>
+        <ion-button class="facebook" expand="block" color="facebook" (click)="authService.FacebookAuth()">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="google" expand="block" color="primary" (click)="authService.GoogleAuth()">
+          <ion-icon name="logo-google"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <span class="divider line one-line">ou</span>
+
   <form>    
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>

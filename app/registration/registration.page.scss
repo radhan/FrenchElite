@@ -1,0 +1,78 @@
+.small-text {
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.divider {
+    display: flex;
+    
+    &:before,
+    &:after {
+      content: "";
+      flex: 1;
+    }
+}
+  
+.line {
+    align-items: center;
+    margin: 1em -1em;
+    color: #cccccc;
+    
+    &:before,
+    &:after {
+      height: 1px;
+      margin: 0 1em;
+    }
+} 
+
+.one-line {
+    &:before,
+    &:after {
+       background: #cccccc;
+    }
+}
+
+.ion-color-facebook {
+  --ion-color-base: var(--ion-color-facebook);
+  --ion-color-base-rgb: var(--ion-color-facebook-rgb);
+  --ion-color-contrast: var(--ion-color-facebook-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-facebook-contrast-rgb);
+  --ion-color-shade: var(--ion-color-facebook-shade);
+  --ion-color-tint: var(--ion-color-facebook-tint);
+}
+
+.button-group {
+  ion-col {
+    &:first-child:not(:last-child) {
+      padding-right: 0;
+      margin-right: -2px;
+      .button {
+        --border-radius: 6px 0px 0px 6px;
+      }
+    }
+    &:last-child:not(:first-child) {
+      padding-left: 0;
+      margin-left: -2px;
+      .button {
+        --border-radius: 0px 6px 6px 0px;
+      }
+    }
+  }
+}
+
+span {
+  color: rgba(33, 33, 33, 0.7);
+  font-size: 12px;
+}
+
+.ion-color-red {
+  --ion-color-base: var(--ion-color-red);
+  --ion-color-base-rgb: var(--ion-color-red-rgb);
+  --ion-color-contrast: var(--ion-color-red-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-red-contrast-rgb);
+  --ion-color-shade: var(--ion-color-red-shade);
+  --ion-color-tint: var(--ion-color-red-tint);
+}
