@@ -41,6 +41,14 @@ const routes: Routes = [
   {
     path: 'not-facebook',
     loadChildren: () => import('./not-facebook/not-facebook.module').then( m => m.NotFacebookPageModule)
+  },
+  {
+    path: 'plan/:id',
+    loadChildren: () => import('./plan/plan.module').then( m => m.PlanPageModule)
+  },
+  {
+    path: 'workout/:id',
+    loadChildren: () => import('./workout/workout.module').then( m => m.WorkoutPageModule)
   }
 
 ];

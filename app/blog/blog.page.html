@@ -1,5 +1,17 @@
 <ion-content padding>
- 
+  <ion-grid>
+    <ion-row class="article" *ngFor="let post of posts">
+      <ion-col size="4">
+        <ion-img class="media" [src]="post.media_url" [alt]="post.title.rendered"></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <h3>{{post.title.rendered}}</h3>
+        <div class="description" [innerHTML]="post.excerpt.rendered"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!--
   <ion-card *ngFor="let post of posts">
     <ion-card-header>
       <ion-card-title [innerHTML]="post.title.rendered"></ion-card-title>
@@ -11,6 +23,7 @@
       <ion-button expand="full" fill="clear" [routerLink]="['/', 'blog', post.id]" text-right>Lire la suite...</ion-button>
     </ion-card-content>
   </ion-card>
+  -->
  
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
     <ion-infinite-scroll-content loadingText="Voir plus...">

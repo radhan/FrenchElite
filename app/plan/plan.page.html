@@ -1,0 +1,16 @@
+<ion-content>
+  <header>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+    </ion-buttons>
+    <ion-img [src]="plan.cover"></ion-img>
+  </header>
+
+  <article>
+    <!-- Description blabla -->
+  </article>
+
+  <ion-fab vertical="bottom">
+    <ion-fab-button [routerLink]="['/', 'workout', plan.id]">Commencer le programme</ion-fab-button>
+  </ion-fab>
+</ion-content>

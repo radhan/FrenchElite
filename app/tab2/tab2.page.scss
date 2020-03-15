@@ -1,3 +1,43 @@
-ion-content ion-toolbar {
-  --background: translucent;
+ion-virtual-scroll ion-card,
+ion-virtual-scroll ion-card.item {
+  position: absolute;
+  margin: 0;
+  border-radius: 0;
+  -webkit-transition-duration: 0ms;
+  transition-duration: 0ms;
+}
+
+ion-virtual-scroll {
+  margin-bottom: 57px;
+}
+
+.img-prog {
+  min-height: 150px;
+  width: 100%;
+}
+
+ion-card {
+  position: relative;
+  text-align: center;
+}
+
+.card-title {
+  position: absolute;
+  top: 36%;
+  font-size: 2.0em;
+  width: 100%;
+  font-weight: bold;
+  color: #fff;
+}
+
+.card-subtitle {
+  font-size: 1.0em;
+  position: absolute;
+  top: 52%;
+  width: 100%;
+  color: #fff;
+}
+
+.no-scroll {
+  //--overflow: hidden;
 }
